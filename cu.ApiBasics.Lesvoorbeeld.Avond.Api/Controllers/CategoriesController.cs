@@ -1,5 +1,6 @@
 ﻿using cu.ApiBAsics.Lesvoorbeeld.Avond.Core.Interfaces.Services;
 using cu.ApiBAsics.Lesvoorbeeld.Avond.Core.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -18,6 +19,7 @@ namespace cu.ApiBasics.Lesvoorbeeld.Avond.Api.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> Get()
         {
             var categories = await _categoryService.GetAllAsync();
