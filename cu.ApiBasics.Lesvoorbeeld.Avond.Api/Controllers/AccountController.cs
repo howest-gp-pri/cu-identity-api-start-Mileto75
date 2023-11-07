@@ -57,8 +57,8 @@ namespace cu.ApiBasics.Lesvoorbeeld.Avond.Api.Controllers
                     signingCredentials: new SigningCredentials(key,SecurityAlgorithms.HmacSha256)
                 );
             //serialize token
-            var serialzedToken = new JwtSecurityTokenHandler().WriteToken(token);
-            return Ok(serialzedToken);
+            var serializedToken = new JwtSecurityTokenHandler().WriteToken(token);
+            return Ok(serializedToken);
         }
 
         [HttpPost("Register")]
